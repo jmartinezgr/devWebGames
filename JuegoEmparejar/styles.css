@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 10px;
+    height: 100vh;
+    background: linear-gradient(to bottom, #d4a5ff, #e1bee7);
+    overflow: hidden;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.card {
+    width: 90px;
+    height: 90px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card .front {
+    transform: rotateY(180deg);
+}
+
+.hidden {
+    display: none;
+}
+
+#message {
+    font-size: 1.2em;
+    margin-top: 10px;
+    height: 30px;
+}
+
+#restartButton {
+    margin-top: 10px;
+    padding: 12px 15px;
+    font-size: 1.2em;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#restartButton:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        max-width: 300px;
+    }
+
+    .card {
+        width: 70px;
+        height: 70px;
+    }
+
+    .card img {
+        width: 60px;
+        height: 60px;
+    }
+
+    #restartButton {
+        font-size: 1em;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .grid {
+        max-width: 250px;
+    }
+
+    .card {
+        width: 50px;
+        height: 50px;
+    }
+
+    .card img {
+        width: 40px;
+        height: 40px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    #message {
+        font-size: 1em;
+    }
+
+    #restartButton {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+}
